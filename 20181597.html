@@ -4,9 +4,15 @@
     <title>Where work happens | Slack</title>
 
     <style>
+        @font-face {
+            font-family: Slack-Circular-Pro;
+            src: url('https://a.slack-edge.com/74f07/spacesuit/source/fonts/circular/circular-pro-book.woff2');
+        }
+
         * {
             padding: 0px;
             margin: 0px;
+            font-family: "Slack-Circular-Pro", Serif;
         }
 
         body {
@@ -14,10 +20,6 @@
             height: 100%;
         }
 
-        @font-face {
-            font-family: Slack-Circular-Pro;
-            src: url('https://a.slack-edge.com/74f07/spacesuit/source/fonts/circular/circular-pro-book.woff2');
-        }
 
         #main_navigation {
             position: fixed;
@@ -84,7 +86,7 @@
             padding: 40px 10%;
         }
 
-        #second_article p {
+        #second_article > h3 {
             font-size: 30px;
             font-weight: bold;
             text-align: center;
@@ -109,7 +111,7 @@
 
         .new:hover {
             transform: scale(1.05);
-            box-shadow: 0px 0px 20px 3px gray;
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
         }
 
         .new > div {
@@ -146,13 +148,13 @@
             padding: 40px 7%;
         }
 
-        #third_article > p {
+        #third_article > h3 {
             font-size: 30px;
             font-weight: bold;
             text-align: center;
         }
 
-        #third_article > h3 {
+        #third_article > p {
             padding: 18px 16% 50px 16%;
             font-size: 20px;
             font-weight: lighter;
@@ -193,18 +195,116 @@
         }
 
         .hub_2 {
+            margin-bottom: 100px;
             font-size: 17px;
             font-weight: bold;
             text-align: center;
             color: rgba(11, 95, 167, 0.82);
 
         }
+        .hub_2:hover {
+            text-decoration: underline;
+        }
+
+
+        #fourth_article {
+            padding: 40px;
+            background-color: rgba(236, 236, 236, 0.65);
+            border-top: 1px rgba(214, 214, 214, 0.94) solid;
+        }
+
+        #fourth_article > h3 {
+            margin-top: 70px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #fourth_article > p {
+            padding: 18px 16% 50px 16%;
+            font-size: 20px;
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        .company {
+            display: inline-block;
+            margin: 20px 5%;
+            padding: 0 8px;
+            width: 260px;
+            height: 470px;
+            background-color: white;
+            box-shadow: 0px 0px 20px 3px #d9d9d9;
+            transition: all ease 0.3s;
+        }
+
+        .company > img {
+            padding: 9px 0;
+            width: 260px;
+            height: 330px;
+        }
+
+        .company:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
+        }
+
+        .company > h3 {
+            font-size: 18px;
+            font-weight: lighter;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .company h4 {
+            font-size: 22px;
+            float: right;
+        }
+
+        .company > div {
+            width: 100%;
+        }
+
+        .main_company {
+            padding: 0 80px;
+        }
+
+        .other {
+            padding: 0 90px;
+        }
+
+        .othercompany1 {
+            display: inline-block;
+            padding: 50px 190px 100px 0;
+            width: 30px;
+            height: 30px;
+        }
+
+        .othercompany {
+            display: inline-block;
+            padding: 50px 190px 100px 0;
+            width: 60px;
+            height: 30px;
+        }
+
+        .othercompany div {
+            width: 300px;
+            height: 150px;
+        }
+
+        .othercompany > img {
+            padding: 9px 0;
+            width: 170px;
+            height: 80px;
+        }
+
 
         #fifth_article {
             background-color: #4b164e;
             width: 100%;
             height: 370px;
         }
+
         #fifth_article p {
             padding-top: 110px;
             color: white;
@@ -212,31 +312,36 @@
             font-size: 30px;
             font-weight: bold;
         }
-        #fifth_article div {
+
+        .get_started_2 {
             margin: 30px 670px;
             padding-top: 17px;
             border-radius: 5px;
             text-align: center;
-            font-weight: bold;
             font-size: 15px;
             width: 180px;
             height: 40px;
             background-color: white;
             color: #4b164e;
+            transition: all ease 0.3s;
         }
 
+        .get_started_2:hover {
+            border-color: #962497;
+            border-style: ridge;
+
+        }
 
 
         #main_footer {
-            padding: 0 10%;
-        }
-
-        .logo {
             width: 100%;
+            padding: 0 80px;
+            display: inline-block;
         }
 
         #main_footer nav {
             width: 60%;
+            float: right;
         }
 
         #main_footer nav div {
@@ -257,7 +362,7 @@
             width: 60%;
         }
 
-        #main_footer nav div ul li {
+        .footer_ul li {
             padding: 8px 0;
         }
 
@@ -284,7 +389,7 @@
     </article>
 
     <article id="second_article">
-        <p>What's new at Slack</p>
+        <h3>What's new at Slack</h3>
         <div class="new">
             <img src="new1.png" alt="new1">
             <h3>Blog</h3>
@@ -312,11 +417,11 @@
     </article>
 
     <article id="third_article">
-        <p>Your hub for teamwork</p>
-        <h3>Project discussions, important documents, free food announcements:
+        <h3>Your hub for teamwork</h3>
+        <p>Project discussions, important documents, free food announcements:
             they all live tidily together in Slack.
             With your team and information in one easily searchable place,
-            collaborating online is as easy as collaborating in person.</h3>
+            collaborating online is as easy as collaborating in person.</p>
         <div class="hub">
             <img src="channels.png" alt="channels">
             <h3>Channels</h3>
@@ -350,14 +455,54 @@
 
     </article>
     <article id="fourth_article">
-
-
+        <h3>You're in good company</h3>
+        <p>Millions of people around the world have already made Slack the place where their work happens.</p>
+        <div class="main_company">
+            <div class="company">
+                <img src="company1.png" alt="company1">
+                <h3>Faster real-time coverage from the field to the fans<br><br></h3>
+                <div>
+                    <h4>&gt;</h4>
+                </div>
+            </div>
+            <div class="company">
+                <img src="company2.png" alt="company2">
+                <h3>Unifying product experience and company culture at Autodesk</h3>
+                <div>
+                    <h4>&gt;</h4>
+                </div>
+            </div>
+            <div class="company">
+                <img src="company3.png" alt="company3">
+                <h3>Reimagining online education and student engagement with Slack</h3>
+                <div>
+                    <h4>&gt;</h4>
+                </div>
+            </div>
+        </div>
+        <div class="other">
+            <div class="othercompany1">
+                <img src="otherCompany1.png" alt="othercompany1">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany2.png" alt="othercompany2">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany3.png" alt="othercompany3">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany4.png" alt="othercompany4">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany5.png" alt="othercompany5">
+            </div>
+        </div>
     </article>
     <article id="fifth_article">
         <p>
             Try Slack with your team for free
         </p>
-        <div>
+        <div class="get_started_2">
             GET STARTED
         </div>
 
@@ -411,7 +556,7 @@
 <footer id="main_footer">
     <!--    <img src="logo.png" alt="slack">-->
     <div class="logo">
-        <p><img src="logo.png" alt="logo"></p>
+        <img src="logo.png" alt="logo">
     </div>
 
     <nav>
