@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Where work happens | Slack</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        @font-face {
+            font-family: Slack-Circular-Pro;
+            src: url('https://a.slack-edge.com/74f07/spacesuit/source/fonts/circular/circular-pro-book.woff2');
+        }
+
+        #main_navigation {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            display: block;
+            border-bottom: 1px solid gray;
+        }
+
+        #main_navigation a {
+            text-decoration: none;
+        }
+
+        .main_menu {
+            margin-left: 50px;
+            list-style: none;
+            height: 70px;
+        }
+
+        .main_menu > li:nth-last-child(1), .main_menu > li:nth-last-child(2) {
+            float: right;
+        }
+
+        .main_menu > li {
+            margin-right: 30px;
+            vertical-align: top;
+            display: inline-block;
+            height: 70px;
+        }
+
+        .main_menu > li {
+            margin-top: 28px;
+        }
+
+        .main_menu > li:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        /*GET STARTED*/
+        .main_menu > li:nth-last-child(2) {
+            margin-top: 0px;
+        }
+
+        .get_started {
+            margin-top: 15px;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            display: inline-block;
+            width: 134px;
+            color: white;
+            background-color: #6c14b7;
+        }
+
+        section {
+            margin-top: 70px;
+        }
+
+        .new {
+            margin: 50px;
+            width: 280px;
+            height: 420px;
+            background-color: gainsboro;
+            display: inline-block;
+            transition: all ease 0.3s;
+        }
+
+        .new > img {
+            padding: 15px;
+            width: 250px;
+            height: 180px;
+        }
+
+        .new:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 5px 3px gray;
+        }
+
+        .new div {
+            width: 100%;
+        }
+
+        .new p {
+            margin: 0 20px;
+        }
+
+        .new h3 {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        .new h4 {
+            font-size: 22px;
+        }
+
+        /* 이건 왜? */
+        .new div h4 {
+            display: inline-block;
+            width: 300px;
+        }
+
+        span {
+            float: right;
+        }
+
+        /*#td {*/
+        /*    text-align: center;*/
+        /*    margin-right: 30px;*/
+        /*}*/
+
+        /*#hub {*/
+
+        /*}*/
+
+
+        .logo {
+            width: 100%;
+        }
+
+        #main_footer nav {
+            width: 60%;
+        }
+
+        #main_footer nav div {
+            display: inline-block;
+            margin: 10px;
+            width: 20%;
+            height: 80%;
+            font-size: 14px;
+
+        }
+
+        #main_footer nav div p {
+            font-weight: bold;
+        }
+
+        .footer_ul {
+            list-style-type: none;
+            width: 60%;
+        }
+
+        #main_footer nav div ul li {
+            padding: 8px 0;
+        }
+
+    </style>
+</head>
+<body>
+<nav id="main_navigation">
+    <ul class="main_menu">
+        <li><a href=""><img src="slack.PNG" width="100" height="30" alt="slack"></a></li>
+        <li><a href="">Why Slack?</a></li>
+        <li><a href="">Solutions</a></li>
+        <li><a href="">Resources</a></li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">
+            <div class="get_started">GET STARTED</div>
+        </a></li>
+        <li><a href="">Sign in</a></li>
+    </ul>
+</nav>
+<section>
+    <article id="first_article">
+
+
+    </article>
+    <article id="second_article">
+        <table>
+            <caption style="font-size: 30px; font-weight: bold;">What's new at Slack</caption>
+            <tbody>
+            <tr>
+                <td class="new">
+                    <img src="new1.png" alt="new1">
+                    <div>
+                        <h3>Blog</h3>
+                        <h4>Frontiers: New features, notable speakers and one fun Slackathon</h4>
+                        <div>
+                            <h4>READ THE RECAP<span>-></span></h4>
+                        </div>
+                    </div>
+                </td>
+                <td class="new">
+                    <img src="new2.png" alt="new2">
+                    <div>
+                        <h3>Tip</h3>
+                        <h4>Sync your Slack status with your Outlook Calendar</h4>
+                        <div>
+                            <h4>LEARN MORE<span>-></span></h4>
+                        </div>
+                    </div>
+                </td>
+                <td class="new">
+                    <img src="new3.png" alt="new3">
+                    <p>
+                    <h3>eBook</h3>
+                    <h4>Getting Started with Slack for Sales</h4>
+                    <div>
+                        <h4>GET EBOOK<span>-></span></h4>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <!--    </article>-->
+        <!--    <article id="third_article">-->
+        <!--        <table>-->
+        <!--            <caption><span style="font-size: 30px; font-weight: bold">Your hub for teamwork</span></caption>-->
+        <!--            <tbody>-->
+        <!--            <tr id="tr">-->
+        <!--                <td id="td">Project discussions, important documents, free food announcements: they all live tidily together in-->
+        <!--                    Slack.-->
+        <!--                    With your team and information in one easily searchable place,-->
+        <!--                    collaborating online is as easy as collaborating in person.</td>-->
+        <!--            </tr>-->
+        <!--            <tr id="hub">-->
+        <!--                <td>-->
+        <!--                    <img src="channels.png" alt="channels"><br>-->
+        <!--                    <strong>Channels</strong><br>-->
+        <!--                    <a href="https://slack.com/intl/en-kr/team-chat">Communication in Slack</a> happens in channels,-->
+        <!--                    organized by project, topic, team, or whatever makes sense for you.-->
+        <!--                </td>-->
+        <!--                <td>-->
+        <!--                    <img src="search.png" alt="search"><br>-->
+        <!--                    <strong>Search</strong><br>-->
+        <!--                    Conversations in Slack are <a href="https://slack.com/intl/en-kr/knowledge-sharing">searchable by-->
+        <!--                    everyone</a>, so you can tap into company knowledge and find information when you need it.-->
+        <!--                </td>-->
+        <!--                <td>-->
+        <!--                    <img src="integrations.png" alt="integrations"><br>-->
+        <!--                    <strong>Integrations</strong><br>-->
+        <!--                    Slack works with the <a href="https://kmu-cs-webclient-191.slack.com/intl/en-kr/apps">tools and-->
+        <!--                    services you already use</a> every day. Pipe in information or take action without leaving Slack.-->
+        <!--                </td>-->
+        <!--                <td>-->
+        <!--                    <img src="security.png" alt="security"><br>-->
+        <!--                    <strong>Security</strong><br>-->
+        <!--                    We take <a href="https://slack.com/intl/en-kr/security">security</a> seriously at Slack. We offer-->
+        <!--                    measures like 2FA and SSO to ensure the safety of your data and protect your organization.-->
+        <!--                </td>-->
+        <!--            </tr>-->
+        <!--            </tbody>-->
+        <!--        </table>-->
+
+    </article>
+    <article id="fourth_article">
+
+
+    </article>
+    <article id="fifth_article">
+
+
+    </article>
+</section>
+<!--<section id="content">-->
+<!--    <article id="first_article">-->
+<!--        <h3>Imagine what you'll accomplish together</h3>-->
+
+
+<!--        <h5>Slack is a collaboration hub for work, no matter what work you do.-->
+<!--            It’s a place where conversations happen, decisions are made,-->
+<!--            and information is always at your fingertips.-->
+<!--            With Slack, your team is better connected.</h5>-->
+
+<!--        <form name="fo" method="get">-->
+<!--            <input type="email" size="25" placeholder="Email address">-->
+<!--            <input type="submit" value="GET STARTED">-->
+<!--        </form>-->
+<!--        <h6>Already using Slack? <a href="https://slack.com/signin">Sign in.</a></h6>-->
+<!--    </article>-->
+
+<!--    <article id="second_article">-->
+<!--        <table>-->
+<!--            <caption>What's new at Slack</caption>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <td href="https://slackhq.com/slack-frontiers-conference-2019-recap?geocode=en-kr&utm_source=wordpress&utm_campaign=cd_blog_wordpress_all_en_cr-slack-frontiers-conference-2019-recap_ym-201904&utm_medium=blog">-->
+<!--                    <img src="new1.png" alt="new1">-->
+<!--                    <p>Blog</p>-->
+<!--                    <p>Frontiers: New features, notable speakers and one fun Slackathon</p>-->
+<!--                    <p>READ THE RECAP<span>→</span></p>-->
+<!--                </td>-->
+<!--                <td href="https://slack.com/intl/en-kr/slack-tips/sync-your-slack-status-with-your-calendar?geocode=en-kr&utm_source=hppromo&utm_campaign=general%20promotion">-->
+<!--                    <img src="new2.png" alt="new2">-->
+<!--                    <p>Tip</p>-->
+<!--                    <p>Sync your Slack status with your Outlook Calendar</p>-->
+<!--                    <p>LEARN MORE<span>→</span></p>-->
+<!--                </td>-->
+<!--                <td href="https://slack.com/intl/en-kr/resources/sales-teams-and-slack-a-handbook?geocode=en-kr&utm_source=hppromo&utm_campaign=general%20promotion">-->
+<!--                    <img src="new3.png" alt="new3">-->
+<!--                    <p>eBook</p>-->
+<!--                    <p>Getting Started with Slack for Sales</p>-->
+<!--                    <p>GET EBOOK<span>→</span></p>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </article>-->
+
+<!--    <article id="third_article">-->
+<!--        <table>-->
+<!--            <caption>Your hub for teamwork</caption>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <h5>Project discussions, important documents, free food announcements: they all live tidily together in-->
+<!--                    Slack.-->
+<!--                    With your team and information in one easily searchable place,-->
+<!--                    collaborating online is as easy as collaborating in person.</h5>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>-->
+<!--                    <img src="channels.png" alt="channels"><br>-->
+<!--                    <strong>Channels</strong><br>-->
+<!--                    <a href="https://slack.com/intl/en-kr/team-chat">Communication in Slack</a> happens in channels,-->
+<!--                    organized by project, topic, team, or whatever makes sense for you.-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <img src="search.png" alt="search"><br>-->
+<!--                    <strong>Search</strong><br>-->
+<!--                    Conversations in Slack are <a href="https://slack.com/intl/en-kr/knowledge-sharing">searchable by-->
+<!--                    everyone</a>, so you can tap into company knowledge and find information when you need it.-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <img src="integrations.png" alt="integrations"><br>-->
+<!--                    <strong>Integrations</strong><br>-->
+<!--                    Slack works with the <a href="https://kmu-cs-webclient-191.slack.com/intl/en-kr/apps">tools and-->
+<!--                    services you already use</a> every day. Pipe in information or take action without leaving Slack.-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    <img src="security.png" alt="security"><br>-->
+<!--                    <strong>Security</strong><br>-->
+<!--                    We take <a href="https://slack.com/intl/en-kr/security">security</a> seriously at Slack. We offer-->
+<!--                    measures like 2FA and SSO to ensure the safety of your data and protect your organization.-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+
+
+<!--    </article>-->
+
+<!--    <article id="fourth_article">-->
+
+
+<!--    </article>-->
+
+
+<!--</section>-->
+<footer id="main_footer">
+    <!--    <img src="logo.png" alt="slack">-->
+    <div class="logo">
+        <p><img src="logo.png" alt="logo"></p>
+    </div>
+
+    <nav>
+        <div class="product_menu">
+            <p>PRODUCT</p>
+            <ul class="footer_ul">
+                <li>Why Slack?</li>
+                <li>Enterprise</li>
+                <li>Security</li>
+                <li>Customer Stories</li>
+                <li>Pricing</li>
+                <li>Slack Demo</li>
+            </ul>
+        </div>
+        <div class="slackforteams_menu">
+            <p>SLACK FOR TEAMS</p>
+            <ul class="footer_ul">
+                <li>Engineering</li>
+                <li>IT</li>
+                <li>Customer Support</li>
+                <li>Sales</li>
+                <li>Marketing</li>
+                <li>Project Management</li>
+                <li>Human Resources</li>
+            </ul>
+        </div>
+        <div class="resources_menu">
+            <p>RESOURCES</p>
+            <ul class="footer_ul">
+                <li>Download Slack</li>
+                <li>eBooks & Reports</li>
+                <li>App Directory</li>
+                <li>API</li>
+                <li>Help Center</li>
+                <li>Slack Tips</li>
+                <li>Partners</li>
+            </ul>
+        </div>
+        <div class="company_menu">
+            <p>COMPANY</p>
+            <ul class="footer_ul">
+                <li>About Us</li>
+                <li>Leadership</li>
+                <li>Blog</li>
+                <li>News</li>
+                <li>Media Kit</li>
+                <li>Careers</li>
+            </ul>
+        </div>
+
+        <!--        <ul class="footer_menu">-->
+        <!--            <li></li>-->
+
+        <!--        </ul>-->
+
+    </nav>
+
+</footer>
+
+</body>
+</html>
