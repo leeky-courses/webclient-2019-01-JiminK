@@ -37,18 +37,7 @@
             color: #646464;
         }
 
-        .left a {
-            width: 100%;
-            display: inline-block;
-            padding: 5px;
 
-        }
-
-        .right a {
-            width: 100%;
-            display: inline-block;
-            padding: 5px;
-        }
 
         .main_menu {
             margin-left: 50px;
@@ -98,17 +87,19 @@
 
         #first_article {
             display: inline-block;
-            margin: 0 200px 100px 200px;
+            margin: 0 100px 100px 100px;
         }
 
         #first_article > div > h1 {
             font-size: 65px;
-            padding: 70px 250px 50px 250px;
+            padding: 70px 250px 20px 250px;
 
         }
 
         #first_article > div > h3 {
             width: 40%;
+            padding-bottom: 70px;
+            padding-right: 50px;
             float: right;
             font-size: 15px;
             color: #646464;
@@ -121,6 +112,7 @@
             padding: 20px;
             border-radius: 5px;
             border: 0.5px solid black;
+            font-size: 20px;
         }
 
         input[type="submit"] {
@@ -135,11 +127,14 @@
 
         .email {
             width: 40%;
+            padding-right: 50px;
             float: right;
+            padding-bottom: 30px;
         }
 
         .photo {
-            width: 50%;
+            margin-left: 170px;
+            width: 550px;
             float: left;
             padding: 10px;
 
@@ -149,9 +144,14 @@
             float: right;
         }
 
+        .photo2 {
+            padding-right: 50px;
+            float: right;
+            width: 40%;
+        }
 
         #second_article {
-            padding: 40px 10%;
+            padding: 40px 5%;
         }
 
         #second_article > h3 {
@@ -208,7 +208,7 @@
         }
 
         #third_article {
-            padding: 40px 7%;
+            padding: 40px 4%;
         }
 
         #third_article > h3 {
@@ -273,7 +273,7 @@
 
 
         #fourth_article {
-            padding: 40px;
+            padding: 40px 10px;
             background-color: rgba(236, 236, 236, 0.65);
             border-top: 1px rgba(214, 214, 214, 0.94) solid;
         }
@@ -381,7 +381,7 @@
         }
 
         .get_started_2 {
-            margin: 30px 670px;
+            margin: 30px 640px;
             padding-top: 17px;
             border-radius: 5px;
             text-align: center;
@@ -408,9 +408,9 @@
         #main_footer nav {
             width: 65%;
             float: right;
+            padding: 80px 0;
 
         }
-
 
         #main_footer nav div {
             vertical-align: top;
@@ -428,9 +428,12 @@
         }
 
         .logo {
-            width: 40%;
-            margin: 50px;
-            margin: 60px 0 0 200px;
+            width: 30%;
+            display: inline-block;
+        }
+
+        .logo img {
+            padding: 60px 100px;
         }
 
         .footer_ul {
@@ -463,18 +466,56 @@
             border: 1px #d6d6d6 solid;
             border-radius: 3px;
             position: absolute;
-            width: 200px;
+            width: 450px;
             height: auto;
             background: white;
             z-index: 1000;
             list-style-type: none;
+
+        }
+
+        .left a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+
+        }
+
+        .right a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .left {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .right {
+            width: 200px;
+            display: inline-block;
+
+        }
+
+        .alone {
+            width: 200px;
+        }
+
+        .alone a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .main_menu li ul div {
+            vertical-align: top;
         }
 
         .main_menu li ul li {
             padding: 5px;
 
         }
-
 
 
         #main_navigation > ul > li > a:hover {
@@ -489,21 +530,11 @@
         #main_navigation li ul li div a {
             width: 100%;
         }
+
         .main_menu li ul div a:hover {
             background: #d6d6d6;
             color: rgba(11, 95, 167, 0.82);
         }
-
-        .left {
-
-        }
-        .right {
-
-
-        }
-
-
-
 
 
     </style>
@@ -515,7 +546,7 @@
         <li><a href="">Why Slack?</a>
             <ul>
                 <li style="font-size: 12px"><a href="">ABOUT THE SLACK</a></li>
-                <div>
+                <div class="alone">
                     <li><a href="">How it works</a></li>
                     <li><a href="">Security</a></li>
                     <li><a href="">Customers</a></li>
@@ -569,10 +600,11 @@
             <h1>Imagine what you'll accomplish together</h1>
         </div>
         <div class="photo">
-            <img src="img2.png" alt="Autodesk" width="500px" height="500px">
+            <img src="img2.png" alt="photo" width="550px" height="550px">
             <h5 style="font-size: 15px; font-weight: lighter; color: #646464">Autodesk fosters open communication with
                 Slack.</h5>
         </div>
+
         <div>
             <h3>Slack is a collaboration hub for work, no matter what work you do.
                 It is a place where conversations happen, decisions are made,
@@ -582,11 +614,14 @@
 
         <div class="email">
             <form name="fo" method="get">
-                <input type="email" size="25" placeholder="Email address">
+                <input type="email" size="30" placeholder="Email address">
                 <input type="submit" value="GET STARTED">
             </form>
             <h6 style="font-weight: lighter; font-size: 13px;">Already using Slack?
                 <a href="https://slack.com/signin" style="color: rgba(11, 95, 167, 0.82)">Sign in.</a></h6>
+        </div>
+        <div class="photo2">
+            <img src="img3.png" alt="photo2" width="350px" height="350px">
         </div>
 
 
@@ -720,24 +755,7 @@
 
     </article>
 </section>
-<!--<section id="content">-->
-<!--    <article id="first_article">-->
-<!--        <h3>Imagine what you'll accomplish together</h3>-->
 
-
-<!--        <h5>Slack is a collaboration hub for work, no matter what work you do.-->
-<!--            It’s a place where conversations happen, decisions are made,-->
-<!--            and information is always at your fingertips.-->
-<!--            With Slack, your team is better connected.</h5>-->
-
-<!--        <form name="fo" method="get">-->
-<!--            <input type="email" size="25" placeholder="Email address">-->
-<!--            <input type="submit" value="GET STARTED">-->
-<!--        </form>-->
-<!--        <h6>Already using Slack? <a href="https://slack.com/signin">Sign in.</a></h6>-->
-<!--    </article>-->
-
-<!--</section>-->
 <footer id="main_footer">
     <!--    <img src="logo.png" alt="slack">-->
     <div class="logo">
