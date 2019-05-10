@@ -376,23 +376,44 @@
 
         .main_menu li ul {
             display: none;
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
+            margin: 10px 0 0 0;
+            padding: 10px;
+            border: 1px #d6d6d6 solid;
+            border-radius: 3px;
             position: absolute;
             width: 200px;
             height: auto;
             background: white;
-            z-index: 200;
+            z-index: 1000;
             list-style-type: none;
         }
 
-        #main_navigation a:hover {
+        .main_menu li ul li {
+            padding: 5px;
+
+        }
+
+
+
+        #main_navigation > ul > li > a:hover {
             color: black;
         }
 
         .main_menu li:hover ul {
             display: block;
+
+        }
+
+        .main_menu li ul div a:hover {
+            background: #d6d6d6;
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        .left {
+
+        }
+        .right {
+
 
         }
 
@@ -448,7 +469,10 @@
             width: 100%;
 
         }
+
         .footer_menu ul {
+            padding: 0;
+            display: block;
             list-style-type: none;
         }
 
@@ -461,32 +485,45 @@
         <li><a href=""><img src="slack.PNG" width="100" height="30" alt="slack"></a></li>
         <li><a href="">Why Slack?</a>
             <ul>
-                <li><a href="">ABOUT THE SLACK</a></li>
-                <li><a href="">How it works</a></li>
-                <li><a href="">Security</a></li>
-                <li><a href="">Customers</a></li>
-                <li><a href="">Enterprise</a></li>
+                <li style="font-size: 12px"><a href="">ABOUT THE SLACK</a></li>
+                <div>
+                    <li><a href="">How it works</a></li>
+                    <li><a href="">Security</a></li>
+                    <li><a href="">Customers</a></li>
+                    <li><a href="">Enterprise</a></li>
+                </div>
             </ul>
         </li>
         <li><a href="">Solutions</a>
             <ul>
-                <li><a href="">SLACK FOR EVERY TEAM</a></li>
-                <li><a href="">Engineering</a></li>
-                <li><a href="">IT</a></li>
-                <li><a href="">Customer Support</a></li>
-                <li><a href="">Project Management</a></li>
+                <li style="font-size: 12px"><a href="">SLACK FOR EVERY TEAM</a></li>
+                <div class="left">
+                    <li><a href="">Engineering</a></li>
+                    <li><a href="">IT</a></li>
+                    <li><a href="">Customer Support</a></li>
+                    <li><a href="">Project Management</a></li>
+                </div>
+                <div class="right">
+                    <li><a href="">Sales</a></li>
+                    <li><a href="">Marketing</a></li>
+                    <li><a href="">Human Resources</a></li>
+                </div>
             </ul>
         </li>
         <li><a href="">Resources</a>
             <ul>
-                <li><a href="">GO FURTHER WITH SLACK</a></li>
-                <li><a href="">Download</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Help Center</a></li>
-                <li><a href="">API</a></li>
-                <li><a href="">eBooks & Reports</a></li>
-                <li><a href="">App Directory</a></li>
-                <li><a href="">Slack Tips</a></li>
+                <li style="font-size: 12px"><a href="">GO FURTHER WITH SLACK</a></li>
+                <div class="left">
+                    <li><a href="">Download</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">API</a></li>
+                </div>
+                <div class="right">
+                    <li><a href="">eBooks & Reports</a></li>
+                    <li><a href="">App Directory</a></li>
+                    <li><a href="">Slack Tips</a></li>
+                </div>
             </ul>
         </li>
         <li><a href="">Pricing</a></li>
@@ -513,14 +550,15 @@
                 and information is always at your fingertips.
                 With Slack, your team is better connected.</h3>
         </div>
-        <!--
+
         <div class="email">
             <form name="fo" method="get">
                 <input type="email" size="25" placeholder="Email address">
                 <input type="submit" value="GET STARTED">
             </form>
+            <h6>Already using Slack? <a href="https://slack.com/signin">Sign in.</a></h6>
         </div>
-        -->
+
     </article>
 
     <article id="second_article">
@@ -668,33 +706,6 @@
 <!--        <h6>Already using Slack? <a href="https://slack.com/signin">Sign in.</a></h6>-->
 <!--    </article>-->
 
-<!--    <article id="second_article">-->
-<!--        <table>-->
-<!--            <caption>What's new at Slack</caption>-->
-<!--            <tbody>-->
-<!--            <tr>-->
-<!--                <td href="https://slackhq.com/slack-frontiers-conference-2019-recap?geocode=en-kr&utm_source=wordpress&utm_campaign=cd_blog_wordpress_all_en_cr-slack-frontiers-conference-2019-recap_ym-201904&utm_medium=blog">-->
-<!--                    <img src="new1.png" alt="new1">-->
-<!--                    <p>Blog</p>-->
-<!--                    <p>Frontiers: New features, notable speakers and one fun Slackathon</p>-->
-<!--                    <p>READ THE RECAP<span>→</span></p>-->
-<!--                </td>-->
-<!--                <td href="https://slack.com/intl/en-kr/slack-tips/sync-your-slack-status-with-your-calendar?geocode=en-kr&utm_source=hppromo&utm_campaign=general%20promotion">-->
-<!--                    <img src="new2.png" alt="new2">-->
-<!--                    <p>Tip</p>-->
-<!--                    <p>Sync your Slack status with your Outlook Calendar</p>-->
-<!--                    <p>LEARN MORE<span>→</span></p>-->
-<!--                </td>-->
-<!--                <td href="https://slack.com/intl/en-kr/resources/sales-teams-and-slack-a-handbook?geocode=en-kr&utm_source=hppromo&utm_campaign=general%20promotion">-->
-<!--                    <img src="new3.png" alt="new3">-->
-<!--                    <p>eBook</p>-->
-<!--                    <p>Getting Started with Slack for Sales</p>-->
-<!--                    <p>GET EBOOK<span>→</span></p>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-<!--    </article>-->
 <!--</section>-->
 <footer id="main_footer">
     <!--    <img src="logo.png" alt="slack">-->
@@ -749,17 +760,17 @@
                 <li>Careers</li>
             </ul>
         </div>
-        <div class="footer_menu">
-            <ul>
-                <li>Status</li>
-                <li>Privacy & Terms</li>
-                <li>Contact Us</li>
-                <li><img src="icon.png" alt="icon">Change Region</li>
-            </ul>
-        </div>
+
 
     </nav>
-
+    <div class="footer_menu">
+        <ul>
+            <li>Status</li>
+            <li>Privacy & Terms</li>
+            <li>Contact Us</li>
+            <li><img src="icon.png" alt="icon" width="24px" height="19px">Change Region</li>
+        </ul>
+    </div>
 </footer>
 
 </body>
