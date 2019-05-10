@@ -37,6 +37,19 @@
             color: #646464;
         }
 
+        .left a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+
+        }
+
+        .right a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+        }
+
         .main_menu {
             margin-left: 50px;
             padding: 0 90px;
@@ -81,6 +94,61 @@
         section {
             margin-top: 70px;
         }
+
+
+        #first_article {
+            display: inline-block;
+            margin: 0 200px 100px 200px;
+        }
+
+        #first_article > div > h1 {
+            font-size: 65px;
+            padding: 70px 250px 50px 250px;
+
+        }
+
+        #first_article > div > h3 {
+            width: 40%;
+            float: right;
+            font-size: 15px;
+            color: #646464;
+            font-weight: lighter;
+        }
+
+        input[type="email"] {
+            height: auto;
+            line-height: normal;
+            padding: 20px;
+            border-radius: 5px;
+            border: 0.5px solid black;
+        }
+
+        input[type="submit"] {
+            height: auto;
+            line-height: normal;
+            padding: 20px 40px;
+            border-radius: 5px;
+            border: 0.5px solid #800080;
+            background-color: #800080;
+            color: white;
+        }
+
+        .email {
+            width: 40%;
+            float: right;
+        }
+
+        .photo {
+            width: 50%;
+            float: left;
+            padding: 10px;
+
+        }
+
+        .photo img {
+            float: right;
+        }
+
 
         #second_article {
             padding: 40px 10%;
@@ -339,6 +407,7 @@
 
         }
 
+
         #main_footer nav div {
             vertical-align: top;
             display: inline-block;
@@ -370,8 +439,17 @@
             color: #646464;
         }
 
-        .product_menu {
-            margin-top: 50px;
+        .footer_menu {
+            display: inline-block;
+            background-color: rgba(236, 236, 236, 0.65);
+            width: 100%;
+
+        }
+
+        .footer_menu ul {
+            padding: 0;
+            display: block;
+            list-style-type: none;
         }
 
         .main_menu li ul {
@@ -404,6 +482,9 @@
 
         }
 
+        #main_navigation li ul li div a {
+            width: 100%;
+        }
         .main_menu li ul div a:hover {
             background: #d6d6d6;
             color: rgba(11, 95, 167, 0.82);
@@ -417,64 +498,8 @@
 
         }
 
-        #first_article {
-            display: inline-block;
-            margin: 0 200px 100px 200px;
-        }
 
-        #first_article > div > h1 {
-            font-size: 65px;
-            padding: 70px 250px 50px 250px;
 
-        }
-
-        #first_article > div > h3 {
-            width: 40%;
-            float: right;
-            font-size: 15px;
-            color: #646464;
-            font-weight: lighter;
-        }
-
-        input[type="email"] {
-            height: auto;
-            line-height: normal;
-            padding: 20px;
-            border-radius: 5px;
-            border: 0.5px solid black;
-        }
-
-        input[type="submit"] {
-            height: auto;
-            line-height: normal;
-            padding: 20px 40px;
-            border-radius: 5px;
-            border: 0.5px solid #800080;
-            background-color: #800080;
-            color: white;
-        }
-
-        .email {
-            width: 40%;
-            float: right;
-        }
-
-        .photo {
-
-        }
-
-        .footer_menu {
-            display: inline-block;
-            background-color: rgba(236, 236, 236, 0.65);
-            width: 100%;
-
-        }
-
-        .footer_menu ul {
-            padding: 0;
-            display: block;
-            list-style-type: none;
-        }
 
 
     </style>
@@ -556,8 +581,10 @@
                 <input type="email" size="25" placeholder="Email address">
                 <input type="submit" value="GET STARTED">
             </form>
-            <h6>Already using Slack? <a href="https://slack.com/signin">Sign in.</a></h6>
+            <h6 style="font-weight: lighter; font-size: 13px;">Already using Slack?
+                <a href="https://slack.com/signin" style="color: rgba(11, 95, 167, 0.82)">Sign in.</a></h6>
         </div>
+
 
     </article>
 
