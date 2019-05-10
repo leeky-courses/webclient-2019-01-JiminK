@@ -37,6 +37,9 @@
             color: #646464;
         }
 
+        #main_navigation a:hover {
+            color: rgba(11, 95, 167, 0.82);
+        }
 
         .main_menu {
             margin-left: 50px;
@@ -77,8 +80,13 @@
             width: 134px;
             color: white;
             background-color: #62197f;
+            transition: all ease 0.3s;
         }
 
+        .get_started:hover {
+            background-color: #49154A;
+
+        }
         section {
             margin-top: 70px;
         }
@@ -108,7 +116,7 @@
         input[type="email"] {
             height: auto;
             line-height: normal;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             border: 0.5px solid black;
             font-size: 16px;
@@ -117,11 +125,17 @@
         input[type="submit"] {
             height: auto;
             line-height: normal;
-            padding: 20px 40px;
+            padding: 15px 35px;
             border-radius: 5px;
             border: 0.5px solid #800080;
             background-color: #800080;
             color: white;
+            transition: all ease 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #49154A;
+            cursor:pointer;
+
         }
 
         .email {
@@ -221,6 +235,15 @@
             font-size: 20px;
             font-weight: lighter;
             text-align: center;
+        }
+
+        .photo1 {
+            margin-top: 100px;
+            position: absolute;
+            z-index: -10;
+        }
+        .photo1:hover {
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
         }
 
         .hub {
@@ -445,6 +468,14 @@
             color: #646464;
         }
 
+        .footer_ul >li a {
+            text-decoration: none;
+            color: #646464;
+        }
+
+        .footer_ul > li a:hover {
+            color: rgba(11, 95, 167, 0.82);
+        }
         .footer_menu {
             display: inline-block;
             background-color: rgba(236, 236, 236, 0.65);
@@ -557,13 +588,17 @@
             color: rgba(11, 95, 167, 0.82);
         }
 
+        .footer_menu > ul > li:nth-last-child(1), .footer_menu > ul > li:nth-last-child(2), .footer_menu > ul > li:nth-last-child(3), .footer_menu > ul > li:nth-last-child(4) {
+            float: right;
+        }
+
 
     </style>
 </head>
 <body>
 <nav id="main_navigation">
     <ul class="main_menu">
-        <li><a href=""><img src="slack.PNG" width="100" height="30" alt="slack"></a></li>
+        <li><a href=""><img src="slack.png" width="100" height="30" alt="slack"></a></li>
         <li><a href="">Why Slack?</a>
             <ul style="width: 200px">
                 <li style="font-size: 12px"><a href="">ABOUT THE SLACK</a></li>
@@ -617,6 +652,10 @@
 </nav>
 <section>
     <article id="first_article">
+        <div class="photo1">
+            <img src="photo1.jpg" alt="photo1" width="350px" height="350px">
+        </div>
+
         <div class="title">
             <h1>Imagine what you'll accomplish together</h1>
         </div>
@@ -839,10 +878,10 @@
             <li><a href="">Privacy & Terms</a></li>
             <li><a href="">Contact Us</a></li>
             <li><a href=""><img src="icon.png" alt="icon" width="24px" height="19px">Change Region</a></li>
-            <li><a hres=""></a><img src="twitter.png"></li>
-            <li><img src="facebook.png"></li>
-            <li><img src="youtube.png"></li>
             <li><img src="in.png"></li>
+            <li><img src="youtube.png"></li>
+            <li><img src="facebook.png"></li>
+            <li><img src="twitter.png"></li>
         </ul>
     </div>
 </footer>
