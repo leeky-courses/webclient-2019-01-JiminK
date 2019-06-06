@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Where work happens | Slack</title>
+    <!--
+    <script type="text/javascript"
+            src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script>
+
+        function popupOpen() {
+            var popUrl = "change_region.html";
+            var popupX = (window.screen.width - 800) / 2;
+            var popupY = (window.screen.height - 350) / 2;
+            var popupOption = "width=800 height=350, resizable=no, scrollbars=no, status=no;";
+                window.open(popUrl, "", popupOption);
+
+        }
+    </script>
+-->
+    <script>
+        var colorImgs = [
+            "img1.jpg",
+            "img2.png",
+            "photo3.png"
+        ];
+        var grayScaleImgs = [
+            "photo1.jpg",
+            "photo2.png",
+            "img3.png"
+        ];
+        var imgsC= new Array();
+        for (var i = 0; i < colorImgs.length; i++) {
+            imgsC[i] = new Image();
+            imgsC[i].src = colorImgs[i];
+        }
+        var imgsG= new Array();
+        for (var i = 0; i < grayScaleImgs.length; i++) {
+            imgsG[i] = new Image();
+            imgsG[i].src = grayScaleImgs[i];
+        }
+
+        var next = 1;
+        function change(img) {
+            img.src = imgsC[next].src;
+            next++;
+            next %= imgsC.length;
+
+        }
+        function change2(img) {
+            img.src = imgsG[next].src;
+            next++;
+            next %= imgsG.length;
+
+        }
+
+    </script>
+
+    <style>
+        @font-face {
+            font-family: Slack-Circular-Pro;
+            src: url('https://a.slack-edge.com/74f07/spacesuit/source/fonts/circular/circular-pro-book.woff2');
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Slack-Circular-Pro", Serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        #main_navigation {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            display: block;
+            border-bottom: 1.5px solid #d6d6d6;
+            z-index: 1000;
+        }
+
+        #main_navigation a {
+            text-decoration: none;
+            color: #646464;
+        }
+
+        #main_navigation a:hover {
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        .main_menu {
+            margin-left: 50px;
+            padding: 0 90px;
+            list-style: none;
+            height: 70px;
+            color: #000;
+        }
+
+        .main_menu > li:nth-last-child(1), .main_menu > li:nth-last-child(2) {
+            float: right;
+        }
+
+        .main_menu > li {
+            margin-top: 24px;
+            margin-right: 30px;
+            vertical-align: top;
+            display: inline-block;
+            height: 70px;
+        }
+
+        .main_menu > li:nth-child(1) {
+            margin-top: 20px;
+        }
+
+        /* GET STARTED */
+        .main_menu > li:nth-last-child(2) {
+            margin-top: 0px;
+        }
+
+        .get_started {
+            margin-top: 15px;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            display: inline-block;
+            width: 134px;
+            color: white;
+            background-color: #62197f;
+            transition: all ease 0.3s;
+        }
+
+        .get_started:hover {
+            background-color: #49154A;
+
+        }
+        section {
+            margin-top: 70px;
+        }
+
+
+        #first_article {
+            display: inline-block;
+            margin: 0 100px 100px 100px;
+        }
+
+        #first_article > div > h1 {
+            font-size: 65px;
+            padding: 70px 250px 20px 250px;
+
+        }
+
+        #first_article > div > h3 {
+            width: 40%;
+            padding-bottom: 70px;
+            padding-right: 50px;
+            float: right;
+            font-size: 15px;
+            color: #646464;
+            font-weight: lighter;
+        }
+
+        input[type="email"] {
+            height: auto;
+            line-height: normal;
+            padding: 15px;
+            border-radius: 5px;
+            border: 0.5px solid black;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            height: auto;
+            line-height: normal;
+            padding: 15px 35px;
+            border-radius: 5px;
+            border: 0.5px solid #800080;
+            background-color: #800080;
+            color: white;
+            transition: all ease 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #49154A;
+            cursor:pointer;
+
+        }
+
+        .email {
+            width: 40%;
+            padding-right: 50px;
+            float: right;
+            padding-bottom: 30px;
+        }
+
+        .photo {
+            margin-left: 170px;
+            width: 450px;
+            float: left;
+            padding: 10px;
+
+        }
+
+        .photo img {
+            float: right;
+        }
+
+        .photo2 {
+            padding-right: 50px;
+            float: right;
+            width: 40%;
+        }
+
+        #second_article {
+            padding: 40px 5%;
+        }
+
+        #second_article > h3 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .new {
+            display: inline-block;
+            margin: 50px 5%;
+            padding: 0 12px;
+            width: 255px;
+            height: 420px;
+            background-color: white;
+            box-shadow: 0px 0px 20px 3px #d9d9d9;
+            transition: all ease 0.3s;
+        }
+
+        .new > img {
+            padding: 15px 0;
+            width: 250px;
+            height: 180px;
+        }
+
+        .new:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
+        }
+
+        .new > div {
+            width: 100%;
+        }
+
+        .new > h3 {
+            font-size: 15px;
+            font-weight: lighter;
+            padding-bottom: 10px;
+            color: black;
+        }
+
+        .new > h4 {
+            font-size: 22px;
+            color: black;
+        }
+
+        .new > div > h4 {
+            padding-top: 50px;
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        span {
+            float: right;
+        }
+
+        #third_article {
+            padding: 40px 4%;
+        }
+
+        #third_article > h3 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #third_article > p {
+            padding: 18px 16% 50px 16%;
+            font-size: 20px;
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        .photo1 {
+            margin-top: 150px;
+            position: absolute;
+            z-index: -10;
+        }
+        .photo1:hover {
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
+        }
+
+        .hub {
+            display: inline-block;
+            padding: 0 25px;
+            width: 270px;
+            height: 320px;
+            background-color: white;
+        }
+
+        .hub > img {
+            padding: 15px 0;
+            width: 95px;
+            height: 70px;
+        }
+
+        .hub a {
+            color: rgba(11, 95, 167, 0.82);
+            text-decoration: none;
+            border-bottom: 1px solid;
+        }
+
+        .hub a:hover {
+            border-bottom: 2px solid;
+        }
+
+        .hub > h3 {
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+
+        .hub > h4 {
+            font-size: 18px;
+            font-weight: lighter;
+        }
+
+        .hub_2 {
+            margin-bottom: 100px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            color: rgba(11, 95, 167, 0.82);
+
+        }
+
+        .hub_2:hover {
+            text-decoration: underline;
+        }
+
+
+        #fourth_article {
+            padding: 40px 10px;
+            background-color: rgba(236, 236, 236, 0.65);
+            border-top: 1px rgba(214, 214, 214, 0.94) solid;
+        }
+
+        #fourth_article > h3 {
+            margin-top: 70px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #fourth_article > p {
+            padding: 18px 16% 50px 16%;
+            font-size: 20px;
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        .company {
+            display: inline-block;
+            margin: 20px 5%;
+            padding: 0 8px;
+            width: 260px;
+            height: 470px;
+            background-color: white;
+            box-shadow: 0px 0px 20px 3px #d9d9d9;
+            transition: all ease 0.3s;
+        }
+
+        .company > img {
+            padding: 9px 0;
+            width: 260px;
+            height: 330px;
+        }
+
+        .company:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px 3px #9b9b9b;
+        }
+
+        .company > h3 {
+            font-size: 18px;
+            font-weight: lighter;
+            text-align: center;
+            padding-bottom: 10px;
+            color: black;
+        }
+
+        .company h4 {
+            font-size: 22px;
+            float: right;
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        .company > div {
+            width: 100%;
+        }
+
+        .main_company {
+            padding: 0 80px;
+        }
+
+        .other {
+            padding: 0 90px;
+        }
+
+        .othercompany1 {
+            display: inline-block;
+            padding: 50px 190px 100px 0;
+            width: 30px;
+            height: 30px;
+        }
+
+        .othercompany {
+            display: inline-block;
+            padding: 50px 190px 100px 0;
+            width: 60px;
+            height: 30px;
+        }
+
+        .othercompany div {
+            width: 300px;
+            height: 150px;
+        }
+
+        .othercompany > img {
+            padding: 9px 0;
+            width: 170px;
+            height: 80px;
+        }
+
+
+        #fifth_article {
+            background-color: #4b164e;
+            width: 100%;
+            height: 370px;
+        }
+
+        #fifth_article p {
+            padding-top: 110px;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .get_started_2 {
+            margin: 30px 640px;
+            padding-top: 17px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 15px;
+            width: 180px;
+            height: 40px;
+            background-color: white;
+            color: #4b164e;
+            transition: all ease 0.3s;
+        }
+
+        .get_started_2:hover {
+            border-color: #962497;
+            border-style: ridge;
+
+        }
+
+
+        #main_footer {
+            width: 100%;
+            display: inline-block;
+        }
+
+        #main_footer nav {
+            width: 65%;
+            float: right;
+            padding: 80px 0;
+
+        }
+
+        #main_footer nav div {
+            vertical-align: top;
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+            height: 80%;
+            font-size: 14px;
+
+        }
+
+        #main_footer nav div p {
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+
+        .logo {
+            width: 30%;
+            display: inline-block;
+        }
+
+        .logo img {
+            padding: 60px 100px;
+        }
+
+        .footer_ul {
+            list-style-type: none;
+            width: 60%;
+        }
+
+        .footer_ul li {
+            padding: 10px 0;
+            color: #646464;
+        }
+
+        .footer_ul >li a {
+            text-decoration: none;
+            color: #646464;
+        }
+
+        .footer_ul > li a:hover {
+            color: rgba(11, 95, 167, 0.82);
+        }
+        .footer_menu {
+            display: inline-block;
+            background-color: rgba(236, 236, 236, 0.65);
+            width: 100%;
+            height: 80px;
+
+        }
+
+        .footer_menu ul {
+            padding: 0;
+            margin: 26px 120px;
+            display: block;
+            list-style-type: none;
+            color: #4d4d4d;
+            font-weight: bold;
+            font-size: 14px;
+
+        }
+
+        .footer_menu li {
+
+            display: inline-block;
+            padding: 0 10px;
+        }
+
+        .footer_menu li a {
+            text-decoration: none;
+            color: #4d4d4d;
+        }
+
+        .footer_menu li a:hover {
+
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        .main_menu li ul {
+            display: none;
+            margin: 10px 0 0 0;
+            padding: 10px;
+            border: 1px #d6d6d6 solid;
+            border-radius: 3px;
+            position: absolute;
+            width: 450px;
+            height: auto;
+            background: white;
+            z-index: 1000;
+            list-style-type: none;
+
+        }
+
+        .left a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+
+        }
+
+        .right a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .left {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .right {
+            width: 200px;
+            display: inline-block;
+
+        }
+
+        .alone {
+            width: 200px;
+        }
+
+        .alone a {
+            width: 100%;
+            display: inline-block;
+            padding: 5px;
+        }
+
+        .main_menu li ul div {
+            vertical-align: top;
+        }
+
+        .main_menu li ul li {
+            padding: 5px;
+
+        }
+
+
+        #main_navigation > ul > li > a:hover {
+            color: black;
+        }
+
+        .main_menu li:hover ul {
+            display: block;
+
+        }
+
+        #main_navigation li ul li div a {
+            width: 100%;
+        }
+
+        .main_menu li ul div a:hover {
+            background: #d6d6d6;
+            color: rgba(11, 95, 167, 0.82);
+        }
+
+        .footer_menu > ul > li:nth-last-child(1), .footer_menu > ul > li:nth-last-child(2), .footer_menu > ul > li:nth-last-child(3), .footer_menu > ul > li:nth-last-child(4) {
+            float: right;
+        }
+
+
+    </style>
+</head>
+<body>
+<nav id="main_navigation">
+    <ul class="main_menu">
+        <li><a href=""><img src="slack.png" width="100" height="30" alt="slack"></a></li>
+        <li><a href="">Why Slack?</a>
+            <ul style="width: 200px">
+                <li style="font-size: 12px"><a href="">ABOUT THE SLACK</a></li>
+                <div class="alone">
+                    <li><a href="">How it works</a></li>
+                    <li><a href="">Security</a></li>
+                    <li><a href="">Customers</a></li>
+                    <li><a href="">Enterprise</a></li>
+                </div>
+            </ul>
+        </li>
+        <li><a href="">Solutions</a>
+            <ul>
+                <li style="font-size: 12px"><a href="">SLACK FOR EVERY TEAM</a></li>
+                <div class="left">
+                    <li><a href="">Engineering</a></li>
+                    <li><a href="">IT</a></li>
+                    <li><a href="">Customer Support</a></li>
+                    <li><a href="">Project Management</a></li>
+                </div>
+                <div class="right">
+                    <li><a href="">Sales</a></li>
+                    <li><a href="">Marketing</a></li>
+                    <li><a href="">Human Resources</a></li>
+                </div>
+            </ul>
+        </li>
+        <li><a href="">Resources</a>
+            <ul>
+                <li style="font-size: 12px"><a href="">GO FURTHER WITH SLACK</a></li>
+                <div class="left">
+                    <li><a href="">Download</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">API</a></li>
+                </div>
+                <div class="right">
+                    <li><a href="">eBooks & Reports</a></li>
+                    <li><a href="">App Directory</a></li>
+                    <li><a href="">Slack Tips</a></li>
+                </div>
+            </ul>
+        </li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">
+            <div class="get_started">GET STARTED</div>
+        </a></li>
+        <li><a href="">Sign in</a></li>
+    </ul>
+
+</nav>
+<section>
+    <article id="first_article">
+        <div id="photo_auto_change_1" class="photo1">
+            <img src="photo1.jpg" alt="photo1" width="251px" height="251px" window.onload="setInterval(change2(this), 2000)">
+        </div>
+
+        <div class="title">
+            <h1>Imagine what you'll accomplish together</h1>
+        </div>
+        <div id="photo_auto_change_3" class="photo">
+            <img src="img2.png" alt="img2" width="550px" height="550px" window.onload="setInterval(change(this), 2000)">
+           <h5 style="font-size: 15px; font-weight: lighter; color: #646464">Autodesk fosters open communication with
+                Slack.</h5>
+        </div>
+
+        <div>
+            <h3>Slack is a collaboration hub for work, no matter what work you do.
+                It is a place where conversations happen, decisions are made,
+                and information is always at your fingertips.
+                With Slack, your team is better connected.</h3>
+        </div>
+
+        <div class="email">
+            <form name="fo" method="get">
+                <input type="email" size="25" placeholder="Email address">
+                <input type="submit" value="GET STARTED">
+            </form>
+            <h6 style="font-weight: lighter; font-size: 13px;">Already using Slack?
+                <a href="https://slack.com/signin" style="color: rgba(11, 95, 167, 0.82)">Sign in.</a></h6>
+        </div>
+        <div id="photo_auto_change_2" class="photo2">
+            <img src="img3.png" alt="img3" width="350px" height="350px" window.onload="setInterval(change2(this), 2000)">
+        </div>
+
+
+    </article>
+
+    <article id="second_article">
+        <h3>What's new at Slack</h3>
+        <a href="" style="text-decoration: none;">
+            <div class="new">
+                <img src="new1.png" alt="new1">
+                <h3>Blog</h3>
+                <h4>Frontiers: New features, notable speakers and one fun slackthon</h4>
+                <div>
+                    <h4>READ THE RECAP <span>&gt;</span></h4>
+                </div>
+            </div>
+            <div class="new">
+                <img src="new2.png" alt="new1">
+                <h3>Tip</h3>
+                <h4>Sync your Slack status with your Outlook Calendar</h4>
+                <div>
+                    <h4>LEARN MORE <span>&gt;</span></h4>
+                </div>
+            </div>
+            <div class="new">
+                <img src="new3.png" alt="new1">
+                <h3>eBook</h3>
+                <h4>Getting Started with Slack for Sales<br><br></h4>
+                <div>
+                    <h4>GET EBOOK <span>&gt;</span></h4>
+                </div>
+            </div>
+        </a>
+    </article>
+
+    <article id="third_article">
+        <h3>Your hub for teamwork</h3>
+        <p>Project discussions, important documents, free food announcements:
+            they all live tidily together in Slack.
+            With your team and information in one easily searchable place,
+            collaborating online is as easy as collaborating in person.</p>
+        <div class="hub">
+            <img src="channels.png" alt="channels">
+            <h3>Channels</h3>
+            <h4><a href="">Communication in Slack</a> happens in channels,
+                organized by project, topic, team, or whatever makes sense for you.<br><br></h4>
+        </div>
+        <div class="hub">
+            <img src="search.png" alt="search">
+            <h3>Search</h3>
+            <h4>Conversations in Slack are <a href="">searchable by everyone</a>,
+                so you can tap into company knowledge and find information when you need it.</h4>
+
+        </div>
+        <div class="hub">
+            <img src="integrations.png" alt="integrations">
+            <h3>Integrations</h3>
+            <h4>Slack works with the <a href="https://kmu-cs-webclient-191.slack.com/intl/en-kr/apps">tools and
+                services you already use</a> every day. Pipe in information or take action without leaving
+                Slack.<br><br></h4>
+        </div>
+        <div class="hub">
+            <img src="security.png" alt="security">
+            <h3>Security</h3>
+            <h4>We take <a href="https://slack.com/intl/en-kr/security">security</a> seriously at Slack.
+                We offer measures like 2FA and SSO to ensure the safety of your data and protect your organization.</h4>
+        </div>
+        <div class="hub_2">
+            <p>Learn more about Slack features &gt;</p>
+        </div>
+
+
+    </article>
+    <article id="fourth_article">
+        <h3>You're in good company</h3>
+        <p>Millions of people around the world have already made Slack the place where their work happens.</p>
+        <div class="main_company">
+            <a href="" style="text-decoration: none;">
+                <div class="company">
+                    <img src="company1.png" alt="company1">
+                    <h3>Faster real-time coverage from the field to the fans<br><br></h3>
+                    <div>
+                        <h4>&gt;</h4>
+                    </div>
+                </div>
+                <div class="company">
+                    <img src="company2.png" alt="company2">
+                    <h3>Unifying product experience and company culture at Autodesk</h3>
+                    <div>
+                        <h4>&gt;</h4>
+                    </div>
+                </div>
+                <div class="company">
+                    <img src="company3.png" alt="company3">
+                    <h3>Reimagining online education and student engagement with Slack</h3>
+                    <div>
+                        <h4>&gt;</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="other">
+            <div class="othercompany1">
+                <img src="otherCompany1.png" alt="othercompany1">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany2.png" alt="othercompany2">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany3.png" alt="othercompany3">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany4.png" alt="othercompany4">
+            </div>
+            <div class="othercompany">
+                <img src="otherCompany5.png" alt="othercompany5">
+            </div>
+        </div>
+    </article>
+    <article id="fifth_article">
+        <p>
+            Try Slack with your team for free
+        </p>
+        <a href="" style="text-decoration: none">
+            <div class="get_started_2">
+                GET STARTED
+
+            </div>
+        </a>
+
+    </article>
+</section>
+
+<footer id="main_footer">
+    <!--    <img src="logo.png" alt="slack">-->
+    <div class="logo">
+        <img src="logo.png" alt="logo">
+    </div>
+
+    <nav>
+        <div class="product_menu">
+            <p>PRODUCT</p>
+            <ul class="footer_ul">
+                <li><a href="">Why Slack?</a></li>
+                <li><a href="">Enterprise</a></li>
+                <li><a href="">Security</a></li>
+                <li><a href="">Customer Stories</a></li>
+                <li><a href="">Pricing</a></li>
+                <li><a href="">Slack Demo</a></li>
+            </ul>
+        </div>
+        <div class="slackforteams_menu">
+            <p>SLACK FOR TEAMS</p>
+            <ul class="footer_ul">
+                <li><a href="">Engineering</a></li>
+                <li><a href="">IT</a></li>
+                <li><a href="">Customer Support</a></li>
+                <li><a href="">Sales</a></li>
+                <li><a href="">Marketing</a></li>
+                <li><a href="">Project Management</a></li>
+                <li><a href="">Human Resources</a></li>
+            </ul>
+        </div>
+        <div class="resources_menu">
+            <p>RESOURCES</p>
+            <ul class="footer_ul">
+                <li><a href="">Download Slack</a></li>
+                <li><a href="">eBooks & Reports</a></li>
+                <li><a href="">App Directory</a></li>
+                <li><a href="">API</a></li>
+                <li><a href="">Help Center</a></li>
+                <li><a href="">Slack Tips</a></li>
+                <li><a href="">Partners</a></li>
+            </ul>
+        </div>
+        <div class="company_menu">
+            <p>COMPANY</p>
+            <ul class="footer_ul">
+                <li><a href="">About Us</a></li>
+                <li><a href="">Leadership</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Media Kit</a></li>
+                <li><a href="">Careers</a></li>
+            </ul>
+        </div>
+
+
+    </nav>
+    <div class="footer_menu">
+        <ul>
+            <li><a href="">Status</a></li>
+            <li><a href="">Privacy & Terms</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="javascript:popupOpen();"><img src="icon.png" alt="icon" width="24px" height="19px">Change Region</a></li>
+            <li><img src="in.png"></li>
+            <li><img src="youtube.png"></li>
+            <li><img src="facebook.png"></li>
+            <li><img src="twitter.png"></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
