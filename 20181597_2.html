@@ -2,59 +2,60 @@
 <html>
 <head>
     <title>Where work happens | Slack</title>
-    <!--
     <script type="text/javascript"
             src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
 
     <script>
+        var nav_fixed = false;
+        $(window).scroll(function(){
+            var scrollPos = $(document).scrollTop();
+            if(scrollPos > 300 && !nav_fixed) {
+                nav_fixed = true;
+                $('#main_navigation').css({"position": "fixed"});
+                $('#main_navigation').css({"height": "1px"});
+                $('#main_navigation').animate({"height": "70px"}, 200);
+            }
+            else if(scrollPos <= 300){
+                nav_fixed = false;
+                $('#main_navigation').css({"position": "absolute"});
+            }
+        });
+        var stage = 0;
+        img_change = setInterval(function() {
+            stage ++;
+            // $('#img1').toggle('size');
+            $('#img1').animate({width: "1px", height: "1px"}, 0).attr("src", gImgs[stage % 3]).animate({width: "251px", height: "251px"}, 500);
+            $('#img2').animate({width: "1px", height: "1px"}, 0).attr("src", colorImgs[(stage+1) % 3]).animate({width: "550px", height: "550px"}, 500);
+            $('#img3').animate({width: "1px", height: "1px"}, 0).attr("src", gImgs[(stage+2) % 3]).animate({width: "350px", height: "350px"}, 500);
+        }, 5000);
 
-        function popupOpen() {
-            var popUrl = "change_region.html";
-            var popupX = (window.screen.width - 800) / 2;
-            var popupY = (window.screen.height - 350) / 2;
-            var popupOption = "width=800 height=350, resizable=no, scrollbars=no, status=no;";
-                window.open(popUrl, "", popupOption);
-
-        }
-    </script>
--->
-    <script>
         var colorImgs = [
-            "img1.jpg",
+            "img1.png",
             "img2.png",
-            "photo3.png"
-        ];
-        var grayScaleImgs = [
-            "photo1.jpg",
-            "photo2.png",
             "img3.png"
         ];
-        var imgsC= new Array();
-        for (var i = 0; i < colorImgs.length; i++) {
-            imgsC[i] = new Image();
-            imgsC[i].src = colorImgs[i];
+        var gImgs = [
+            "img1_g.png",
+            "img2_g.png",
+            "img3_g.png"
+        ];
+        function goTop(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+        };
+        function popupOpen() {
+            var popUrl = "change_region.html";
+            var popupOption = "width=800 height=350, toolbar=no, directories=no, resizable=no, scrollbars=no, status=no;";
+            window.open(popUrl, "", popupOption);
         }
-        var imgsG= new Array();
-        for (var i = 0; i < grayScaleImgs.length; i++) {
-            imgsG[i] = new Image();
-            imgsG[i].src = grayScaleImgs[i];
+        function check() {
+            var email = document.getElementById("email").value;
+            var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+            if(exptext.test(email)==false){
+                alert("Enter Your Email Again :)");
+                document.addjoin.email.focus();
+                return false;
+            }
         }
-
-        var next = 1;
-        function change(img) {
-            img.src = imgsC[next].src;
-            next++;
-            next %= imgsC.length;
-
-        }
-        function change2(img) {
-            img.src = imgsG[next].src;
-            next++;
-            next %= imgsG.length;
-
-        }
-
     </script>
 
     <style>
@@ -74,9 +75,23 @@
             height: 100%;
         }
 
+        #img1 {
+            width: 251px;
+            height: 251px;
+        }
+        #img2 {
+             width: 550px;
+             height: 550px;
+         }
+
+        #img3 {
+            width: 350px;
+            height: 350px;
+        }
 
         #main_navigation {
-            position: fixed;
+            /*overflow: hidden;*/
+            position: absolute;
             top: 0;
             width: 100%;
             height: 70px;
@@ -167,7 +182,7 @@
             font-weight: lighter;
         }
 
-        input[type="email"] {
+        input[type="text"] {
             height: auto;
             line-height: normal;
             padding: 15px;
@@ -202,6 +217,7 @@
         .photo {
             margin-left: 170px;
             width: 450px;
+            height: 589px;
             float: left;
             padding: 10px;
 
@@ -215,6 +231,7 @@
             padding-right: 50px;
             float: right;
             width: 40%;
+            height: 354px;
         }
 
         #second_article {
@@ -294,6 +311,7 @@
         .photo1 {
             margin-top: 150px;
             position: absolute;
+            height: 255px;
             z-index: -10;
         }
         .photo1:hover {
@@ -646,6 +664,23 @@
             float: right;
         }
 
+        #gotop {
+            padding-top: 5px;
+            position: fixed;
+            border-radius: 5px;
+            bottom: 20px;
+            right: 20px;
+            text-align: center;
+            width: 100px;
+            height: 30px;
+            background-color: #62197f;
+            color: white;
+        }
+
+        #gotop:hover {
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -702,19 +737,21 @@
         </a></li>
         <li><a href="">Sign in</a></li>
     </ul>
-
 </nav>
+<div id="gotop" onclick="goTop()">
+    <div>Go to Top</div>
+</div>
 <section>
     <article id="first_article">
         <div id="photo_auto_change_1" class="photo1">
-            <img src="photo1.jpg" alt="photo1" width="251px" height="251px" window.onload="setInterval(change2(this), 2000)">
+            <img src="img1_g.png" id="img1" alt="photo1">
         </div>
 
         <div class="title">
             <h1>Imagine what you'll accomplish together</h1>
         </div>
         <div id="photo_auto_change_3" class="photo">
-            <img src="img2.png" alt="img2" width="550px" height="550px" window.onload="setInterval(change(this), 2000)">
+            <img src="img2.png" id="img2" alt="img2">
            <h5 style="font-size: 15px; font-weight: lighter; color: #646464">Autodesk fosters open communication with
                 Slack.</h5>
         </div>
@@ -727,15 +764,15 @@
         </div>
 
         <div class="email">
-            <form name="fo" method="get">
-                <input type="email" size="25" placeholder="Email address">
+            <form name="fo" method="get" onsubmit="check();">
+                <input type="text" size="25" placeholder="Email address" id="email">
                 <input type="submit" value="GET STARTED">
             </form>
             <h6 style="font-weight: lighter; font-size: 13px;">Already using Slack?
                 <a href="https://slack.com/signin" style="color: rgba(11, 95, 167, 0.82)">Sign in.</a></h6>
         </div>
         <div id="photo_auto_change_2" class="photo2">
-            <img src="img3.png" alt="img3" width="350px" height="350px" window.onload="setInterval(change2(this), 2000)">
+            <img src="img3_g.png" id="img3" alt="img3">
         </div>
 
 
